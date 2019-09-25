@@ -10,7 +10,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
                 <title>Who are you?</title>
                 <body>
 
-                <form action="http://34.229.188.206:8080/getname" method="post" enctype="multipart/form-data">
+                <form action="http://purplewhatevers.com:8080/getname" method="post" enctype="multipart/form-data">
                 <label for="text">Please enter your name:</label>
                 <input type="text" name="name">
                 <input type="submit" name="submit" value="Submit">
