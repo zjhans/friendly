@@ -5,6 +5,7 @@ import (
         "net/http"
 )
 
+//Home function, writes out HTML form to the user
 func Home(w http.ResponseWriter, r *http.Request) {
         html := `<html>
                 <title>Who are you?</title>
@@ -22,6 +23,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
                 w.Write([]byte(fmt.Sprintf(html)))
         }
 
+//Form processor, checks for any errors and writes back based on user input
 func GetName(w http.ResponseWriter, r *http.Request) {
         err := r.ParseMultipartForm(200000) //Grab and error check text form and send err to browser
 
