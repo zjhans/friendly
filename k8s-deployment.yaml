@@ -15,7 +15,22 @@ spec:
     spec:                        # Specs for the container which will run in the Pod
       containers:
       - name: friendly
-        image: zjhans/friendly:1.0.0 
+        image: zjhans/friendly:1.0.3
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
+#Start service configuration
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: friendly-service
+spec:
+    type: NodePort
+    ports:
+    - name: http
+      nodePort: 30002
+      port: 8080
+      targetPort: 8080
+    selector:
+      app: friendly
