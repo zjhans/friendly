@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment                 # Type of Kubernetes resource
 metadata:
-  name: friendly                 # Name of my Go application
+  name: friendly-optimized       # Name of my Go application
 spec:
   replicas: 2                    # Keep 2 pods alive and running
   selector:
     matchLabels:
-      app: friendly              # This deployment applies to any Pods matching the specified label
+      app: friendly-optimized    # This deployment applies to any Pods matching the specified label
   template:                      # This deployment will create a set of pods using the configurations in this template
     metadata:
       labels:                    # The labels that will be applied to all of the pods in this deployment
-        app: friendly 
+        app: friendly-optimized 
     spec:                        # Specs for the container which will run in the Pod
       containers:
-      - name: friendly
-        image: zjhans/friendly:1.0.3
+      - name: friendly-optimized
+        image: zjhans/friendly-optimized:1.1.2
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
@@ -33,4 +33,4 @@ spec:
       port: 8080
       targetPort: 8080
     selector:
-      app: friendly
+      app: friendly-optimized
