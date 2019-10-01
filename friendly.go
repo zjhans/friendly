@@ -8,12 +8,24 @@ import (
 //Home function, writes out HTML form to the user
 func Home(w http.ResponseWriter, r *http.Request) {
         html := `<html>
-                <title>Who are you?</title>
+                <head>
+                <title>Hi. Who are you?</title>
+                <style>
+                body {
+                        background-color: silver;
+                }
+                label {
+                        font-family: verdana;
+                        font-size: 18px;
+                }
+
+                </style>
+                </head>
                 <body>
 
-                <form action="http://purplewhatevers.com:30002/getname" method="post" enctype="multipart/form-data">
-                <label for="text">Please enter your name:</label>
-                <input type="text" name="name">
+                <form action="http://54.196.230.194:30002/getname" method="post" enctype="multipart/form-data">
+                <label for="text">Please enter your name:</label></br>
+                <input type="text" name="name" size="22"></br>
                 <input type="submit" name="submit" value="Submit">
                 </form>
 
